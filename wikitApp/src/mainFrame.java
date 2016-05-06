@@ -2,6 +2,7 @@
 import java.awt.Cursor;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.Vector;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,6 +20,22 @@ public class mainFrame extends javax.swing.JFrame {
      */
     public mainFrame() {
         initComponents();
+        
+        //add all blank frame into vec
+        this.frameVec = new Vector();
+        this.frameVec.addElement(frame1);
+        this.frameVec.addElement(frame2);
+        this.frameVec.addElement(frame3);
+        this.frameVec.addElement(frame4);
+        this.frameVec.addElement(frame5);
+        this.frameVec.addElement(frame6);
+        this.frameVec.addElement(frame7);
+        this.frameVec.addElement(frame8);
+        this.frameVec.addElement(frame9);
+        this.frameVec.addElement(frame10);
+        
+        utils = new myUtils();
+        
     }
 
     /**
@@ -36,16 +53,16 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        frame1 = new javax.swing.JLabel();
+        frame2 = new javax.swing.JLabel();
+        frame4 = new javax.swing.JLabel();
+        frame3 = new javax.swing.JLabel();
+        frame7 = new javax.swing.JLabel();
+        frame8 = new javax.swing.JLabel();
+        frame9 = new javax.swing.JLabel();
+        frame10 = new javax.swing.JLabel();
+        frame5 = new javax.swing.JLabel();
+        frame6 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -80,25 +97,25 @@ public class mainFrame extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/MB.imageset/MB_small.png"))); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
+        frame4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
+        frame10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LS.imageset/LS_small.jpg"))); // NOI18N
         jLabel15.setText("LIGHT");
@@ -126,27 +143,27 @@ public class mainFrame extends javax.swing.JFrame {
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(frame5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(frame6, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(frame1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel5)
+                                .addComponent(frame2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel6)
+                                .addComponent(frame3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel7))))
+                                .addComponent(frame4))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
+                        .addComponent(frame7)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
+                        .addComponent(frame8)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel11)
+                        .addComponent(frame9)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel12)))
+                        .addComponent(frame10)))
                 .addGap(135, 135, 135))
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -156,10 +173,10 @@ public class mainFrame extends javax.swing.JFrame {
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3)))
+                            .addComponent(frame4)
+                            .addComponent(frame3)
+                            .addComponent(frame2)
+                            .addComponent(frame1)))
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(jLabel15)))
@@ -171,15 +188,15 @@ public class mainFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel4))
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel13)
+                                .addComponent(frame5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel14)))
+                                .addComponent(frame6)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9))
+                            .addComponent(frame10)
+                            .addComponent(frame9)
+                            .addComponent(frame8)
+                            .addComponent(frame7))
                         .addContainerGap(325, Short.MAX_VALUE))
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
@@ -195,16 +212,16 @@ public class mainFrame extends javax.swing.JFrame {
         jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel12, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel13, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel14, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame7, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame8, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(frame6, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel15, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel16, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -261,13 +278,9 @@ public class mainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         Cursor cur = new Cursor(MOVE_CURSOR);
         this.setCursor(cur);
-
-        int deltaX = evt.getLocationOnScreen().x - this.jLabel3.getLocationOnScreen().x;
-        int deltaY = evt.getLocationOnScreen().y - this.jLabel3.getLocationOnScreen().y;        
-        if( deltaX > 0 && deltaX < 75 && deltaY > 0 && deltaY < 75){
-            System.out.println("jLabel3 hits");
-            this.jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write_LD.png")));
-        }
+        
+        this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        
     }//GEN-LAST:event_jLabel2MouseDragged
 
     private void jLabel2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseReleased
@@ -313,22 +326,22 @@ public class mainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel frame1;
+    private javax.swing.JLabel frame10;
+    private javax.swing.JLabel frame2;
+    private javax.swing.JLabel frame3;
+    private javax.swing.JLabel frame4;
+    private javax.swing.JLabel frame5;
+    private javax.swing.JLabel frame6;
+    private javax.swing.JLabel frame7;
+    private javax.swing.JLabel frame8;
+    private javax.swing.JLabel frame9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -337,4 +350,8 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
+    
+    //Hongjie: additional var.
+    public Vector frameVec;
+    public myUtils utils;
 }
