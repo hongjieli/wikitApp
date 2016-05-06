@@ -21,8 +21,9 @@ public class myUtils{
             int deltaX = src.x - tmp.getLocationOnScreen().x;
             int deltaY = src.y - tmp.getLocationOnScreen().y;
             if( deltaX > 0 && deltaX < 75 && deltaY > 0 && deltaY < 75){
-                System.out.println("frame" + i + " hits");
-                //this.jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write_LD.png")));
+                //System.out.println("frame" + i + " hits");
+                returnIndex = i;
+                break;
             }
         }
         

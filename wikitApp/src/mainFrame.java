@@ -50,9 +50,9 @@ public class mainFrame extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelBar = new javax.swing.JLabel();
+        jLabelNoise = new javax.swing.JLabel();
+        jLabelMainBoard = new javax.swing.JLabel();
         frame1 = new javax.swing.JLabel();
         frame2 = new javax.swing.JLabel();
         frame4 = new javax.swing.JLabel();
@@ -63,9 +63,9 @@ public class mainFrame extends javax.swing.JFrame {
         frame10 = new javax.swing.JLabel();
         frame5 = new javax.swing.JLabel();
         frame6 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        jLabelLight = new javax.swing.JLabel();
+        jLabelBuzzer = new javax.swing.JLabel();
+        jLabelRGB = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -76,180 +76,119 @@ public class mainFrame extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(java.awt.SystemColor.controlLtHighlight);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BAR.imageset/BAR_small.jpg"))); // NOI18N
-        jLabel1.setText("BAR");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LD.imageset/LD_small.png"))); // NOI18N
-        jLabel2.setText("NOISE");
-        jLabel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        jLabelBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BAR.imageset/BAR_small.jpg"))); // NOI18N
+        jLabelBar.setText("BAR");
+        jLabelBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jLabel2MouseDragged(evt);
+                jLabelBarMouseDragged(evt);
             }
         });
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabelBar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jLabel2MouseReleased(evt);
+                jLabelBarMouseReleased(evt);
             }
         });
+        jLayeredPane1.add(jLabelBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 310, 92, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/MB.imageset/MB_small.png"))); // NOI18N
+        jLabelNoise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LD.imageset/LD_small.png"))); // NOI18N
+        jLabelNoise.setText("NOISE");
+        jLabelNoise.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabelNoiseMouseDragged(evt);
+            }
+        });
+        jLabelNoise.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelNoiseMouseReleased(evt);
+            }
+        });
+        jLayeredPane1.add(jLabelNoise, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 174, 92, -1));
+
+        jLabelMainBoard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/MB.imageset/MB_small.png"))); // NOI18N
+        jLayeredPane1.add(jLabelMainBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 146, -1, -1));
 
         frame1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        jLayeredPane1.add(frame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 17, -1, -1));
 
         frame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        jLayeredPane1.add(frame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 17, -1, -1));
 
         frame4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
+        jLayeredPane1.add(frame4, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 17, -1, -1));
 
         frame3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        jLayeredPane1.add(frame3, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 17, -1, -1));
 
         frame7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        jLayeredPane1.add(frame7, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 368, -1, -1));
 
         frame8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        jLayeredPane1.add(frame8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 368, -1, -1));
 
         frame9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        jLayeredPane1.add(frame9, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 368, -1, -1));
 
         frame10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
+        jLayeredPane1.add(frame10, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 368, -1, -1));
 
         frame5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        jLayeredPane1.add(frame5, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 132, -1, -1));
 
         frame6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        jLayeredPane1.add(frame6, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 266, -1, -1));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LS.imageset/LS_small.jpg"))); // NOI18N
-        jLabel15.setText("LIGHT");
+        jLabelLight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LS.imageset/LS_small.jpg"))); // NOI18N
+        jLabelLight.setText("LIGHT");
+        jLabelLight.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabelLightMouseDragged(evt);
+            }
+        });
+        jLabelLight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelLightMouseReleased(evt);
+            }
+        });
+        jLayeredPane1.add(jLabelLight, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 38, 92, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/buzzer.imageset/buzzer_small.jpg"))); // NOI18N
-        jLabel8.setText("BUZZER");
+        jLabelBuzzer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/buzzer.imageset/buzzer_small.jpg"))); // NOI18N
+        jLabelBuzzer.setText("BUZZER");
+        jLabelBuzzer.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabelBuzzerMouseDragged(evt);
+            }
+        });
+        jLabelBuzzer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelBuzzerMouseReleased(evt);
+            }
+        });
+        jLayeredPane1.add(jLabelBuzzer, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 106, -1, -1));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/RGB.imageset/RGB_small.jpg"))); // NOI18N
-        jLabel16.setText("RGB");
+        jLabelRGB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/RGB.imageset/RGB_small.jpg"))); // NOI18N
+        jLabelRGB.setText("RGB");
+        jLabelRGB.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabelRGBMouseDragged(evt);
+            }
+        });
+        jLabelRGB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelRGBMouseReleased(evt);
+            }
+        });
+        jLayeredPane1.add(jLabelRGB, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 242, 92, -1));
 
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
-        jLayeredPane1.setLayout(jLayeredPane1Layout);
-        jLayeredPane1Layout.setHorizontalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(frame5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(frame6, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                                .addComponent(frame1)
-                                .addGap(18, 18, 18)
-                                .addComponent(frame2)
-                                .addGap(18, 18, 18)
-                                .addComponent(frame3)
-                                .addGap(18, 18, 18)
-                                .addComponent(frame4))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                        .addComponent(frame7)
-                        .addGap(18, 18, 18)
-                        .addComponent(frame8)
-                        .addGap(18, 18, 18)
-                        .addComponent(frame9)
-                        .addGap(18, 18, 18)
-                        .addComponent(frame10)))
-                .addGap(135, 135, 135))
-        );
-        jLayeredPane1Layout.setVerticalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(frame4)
-                            .addComponent(frame3)
-                            .addComponent(frame2)
-                            .addComponent(frame1)))
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel15)))
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                .addGap(18, 30, Short.MAX_VALUE)
-                                .addComponent(jLabel4))
-                            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(frame5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(frame6)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(frame10)
-                            .addComponent(frame9)
-                            .addComponent(frame8)
-                            .addComponent(frame7))
-                        .addContainerGap(325, Short.MAX_VALUE))
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel16)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame9, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame10, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(frame6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel15, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel16, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jPanel1.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jTabbedPane1.addTab("Design", jPanel1);
 
-        jTabbedPane1.addTab("tab1", jPanel1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1019, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
-        );
-
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jTabbedPane1.addTab("tab2", jPanel2);
 
         jMenu1.setText("File");
@@ -274,21 +213,110 @@ public class mainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseDragged
+    private void jLabelNoiseMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNoiseMouseDragged
         // TODO add your handling code here:
         Cursor cur = new Cursor(MOVE_CURSOR);
         this.setCursor(cur);
-        
-        this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
-        
-    }//GEN-LAST:event_jLabel2MouseDragged
+    }//GEN-LAST:event_jLabelNoiseMouseDragged
 
-    private void jLabel2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseReleased
+    private void jLabelNoiseMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNoiseMouseReleased
         // TODO add your handling code here:
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
+        
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        if (indexOfFrameVec < 0){
+            System.out.println("No frame hit");
+        }
+        else{
+            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LD.imageset/LD_small.png")));
+        }
+    }//GEN-LAST:event_jLabelNoiseMouseReleased
 
-    }//GEN-LAST:event_jLabel2MouseReleased
+    private void jLabelLightMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLightMouseDragged
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(MOVE_CURSOR);
+        this.setCursor(cur);
+    }//GEN-LAST:event_jLabelLightMouseDragged
+
+    private void jLabelLightMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLightMouseReleased
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(DEFAULT_CURSOR);
+        this.setCursor(cur);
+        
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        if (indexOfFrameVec < 0){
+            System.out.println("No frame hit");
+        }
+        else{
+            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LS.imageset/LS_small.jpg")));
+        }
+    }//GEN-LAST:event_jLabelLightMouseReleased
+
+    private void jLabelBuzzerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuzzerMouseDragged
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(MOVE_CURSOR);
+        this.setCursor(cur);
+    }//GEN-LAST:event_jLabelBuzzerMouseDragged
+
+    private void jLabelRGBMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRGBMouseDragged
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(MOVE_CURSOR);
+        this.setCursor(cur);
+    }//GEN-LAST:event_jLabelRGBMouseDragged
+
+    private void jLabelBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBarMouseDragged
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(MOVE_CURSOR);
+        this.setCursor(cur);
+    }//GEN-LAST:event_jLabelBarMouseDragged
+
+    private void jLabelBuzzerMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuzzerMouseReleased
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(DEFAULT_CURSOR);
+        this.setCursor(cur);
+        
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        if (indexOfFrameVec < 0){
+            System.out.println("No frame hit");
+        }
+        else{
+            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/buzzer.imageset/buzzer_small.jpg")));
+        }
+    }//GEN-LAST:event_jLabelBuzzerMouseReleased
+
+    private void jLabelRGBMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRGBMouseReleased
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(DEFAULT_CURSOR);
+        this.setCursor(cur);
+        
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        if (indexOfFrameVec < 0){
+            System.out.println("No frame hit");
+        }
+        else{
+            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/RGB.imageset/RGB_small.jpg")));
+        }
+    }//GEN-LAST:event_jLabelRGBMouseReleased
+
+    private void jLabelBarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBarMouseReleased
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(DEFAULT_CURSOR);
+        this.setCursor(cur);
+        
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        if (indexOfFrameVec < 0){
+            System.out.println("No frame hit");
+        }
+        else{
+            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BAR.imageset/BAR_small.jpg")));
+        }        
+    }//GEN-LAST:event_jLabelBarMouseReleased
 
     /**
      * @param args the command line arguments
@@ -336,12 +364,12 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel frame7;
     private javax.swing.JLabel frame8;
     private javax.swing.JLabel frame9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelBar;
+    private javax.swing.JLabel jLabelBuzzer;
+    private javax.swing.JLabel jLabelLight;
+    private javax.swing.JLabel jLabelMainBoard;
+    private javax.swing.JLabel jLabelNoise;
+    private javax.swing.JLabel jLabelRGB;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
