@@ -25,30 +25,18 @@ public class mainFrame extends javax.swing.JFrame {
         utils = new myUtils();
         
         //add all blank frame into vec
-        this.frameVec = new Vector();
-        this.frameVec.addElement(frame1);
-        this.frameVec.addElement(frame2);
-        this.frameVec.addElement(frame3);
-        this.frameVec.addElement(frame4);
-        this.frameVec.addElement(frame5);
-        this.frameVec.addElement(frame6);
-        this.frameVec.addElement(frame7);
-        this.frameVec.addElement(frame8);
-        this.frameVec.addElement(frame9);
-        this.frameVec.addElement(frame10);
-        
-        //map the device type to the frame
-        this.frameType = new Vector();
-        this.frameType.addElement(utils.FRAMETYPE.ANALOG);
-        this.frameType.addElement(utils.FRAMETYPE.ANALOG);
-        this.frameType.addElement(utils.FRAMETYPE.ANALOG);
-        this.frameType.addElement(utils.FRAMETYPE.INVALID);
-        this.frameType.addElement(utils.FRAMETYPE.ANALOG);
-        this.frameType.addElement(utils.FRAMETYPE.DIGITAL);
-        this.frameType.addElement(utils.FRAMETYPE.DIGITAL);
-        this.frameType.addElement(utils.FRAMETYPE.DIGITAL);
-        this.frameType.addElement(utils.FRAMETYPE.PWM);
-        this.frameType.addElement(utils.FRAMETYPE.INVALID);  
+        this.vecFrameProperty = new Vector();
+        this.vecFrameProperty.addElement(new myFrameProperty("frame1", utils.FRAMETYPE.ANALOG, false, "/resource/white.imageset/white.png", this.frame1, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame2", utils.FRAMETYPE.ANALOG, false, "/resource/white.imageset/white.png", this.frame2, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame3", utils.FRAMETYPE.ANALOG, false, "/resource/white.imageset/white.png", this.frame3, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame4", utils.FRAMETYPE.INVALID, false, "/resource/gray.imageset/grey.png", this.frame4, false));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame5", utils.FRAMETYPE.ANALOG, false, "/resource/white.imageset/white.png", this.frame5, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame6", utils.FRAMETYPE.DIGITAL, false, "/resource/white.imageset/white.png", this.frame6, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame7", utils.FRAMETYPE.DIGITAL, false, "/resource/white.imageset/white.png", this.frame7, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame8", utils.FRAMETYPE.DIGITAL, false, "/resource/white.imageset/white.png", this.frame8, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame9", utils.FRAMETYPE.PWM, false, "/resource/white.imageset/white.png", this.frame9, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame10", utils.FRAMETYPE.INVALID, false, "/resource/gray.imageset/grey.png", this.frame10, false));
+
     }
 
     /**
@@ -240,12 +228,12 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
         
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
         if (indexOfFrameVec < 0){
             System.out.println("No frame hit");
         }
         else{
-            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
             tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_LD.png")));
         }
     }//GEN-LAST:event_jLabelNoiseMouseReleased
@@ -261,12 +249,12 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
         
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
         if (indexOfFrameVec < 0){
             System.out.println("No frame hit");
         }
         else{
-            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
             tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_LS.png")));
         }
     }//GEN-LAST:event_jLabelLightMouseReleased
@@ -294,12 +282,12 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
         
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
         if (indexOfFrameVec < 0){
             System.out.println("No frame hit");
         }
         else{
-            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
             tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_buzzer.png")));
         }
     }//GEN-LAST:event_jLabelBuzzerMouseReleased
@@ -309,12 +297,12 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
         
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
         if (indexOfFrameVec < 0){
             System.out.println("No frame hit");
         }
         else{
-            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
             tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_RGB.png")));
         }
     }//GEN-LAST:event_jLabelRGBMouseReleased
@@ -324,19 +312,19 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
         
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), frameVec);
+        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
         if (indexOfFrameVec < 0){
             System.out.println("No frame hit");
         }
         else{
-            javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
+            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
             tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_BAR.png")));
         }        
     }//GEN-LAST:event_jLabelBarMouseReleased
 
     private void jLabelNoiseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNoiseMousePressed
         // TODO add your handling code here:
-        this.utils.AnalogDevicePressed(this.frameVec, this.frameType);
+        //this.utils.AnalogDevicePressed(this.vecFrameProperty, this.frameType);
     }//GEN-LAST:event_jLabelNoiseMousePressed
 
     /**
@@ -401,7 +389,10 @@ public class mainFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     
     //Hongjie: additional var.
-    public Vector frameVec;
-    public Vector frameType;
+    public Vector vecFrameProperty;
+    //public Vector frameType;
     public myUtils utils;
+    
+    //const
+    public final int iFrameNum = 10;
 }

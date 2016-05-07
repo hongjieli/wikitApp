@@ -12,14 +12,16 @@ import java.util.Vector;
  * @author honli
  */
 public class myUtils{
-    public int findFrameLocation(Point src, Vector vecFrame) {
+    public int findFrameLocation(Point src, Vector vecFrameProperty) {
         int returnIndex = -1;
         
-        for(int i = 0; i < vecFrame.size(); i++)
+        for(int i = 0; i < vecFrameProperty.size(); i++)
         {
-            javax.swing.JLabel tmp  = (javax.swing.JLabel) vecFrame.get(i);
-            int deltaX = src.x - tmp.getLocationOnScreen().x;
-            int deltaY = src.y - tmp.getLocationOnScreen().y;
+            //myFrameProperty framePropertyEntity = (myFrameProperty) vecFrameProperty.get(i);
+            //System.out.println("frame is " + framePropertyEntity.frameName);
+            javax.swing.JLabel jLabelEntity = ((myFrameProperty) vecFrameProperty.get(i)).labelEntity;
+            int deltaX = src.x - jLabelEntity.getLocationOnScreen().x;
+            int deltaY = src.y - jLabelEntity.getLocationOnScreen().y;
             if( deltaX > 0 && deltaX < 75 && deltaY > 0 && deltaY < 75){
                 //System.out.println("frame" + i + " hits");
                 returnIndex = i;
@@ -38,6 +40,23 @@ public class myUtils{
         }
     }
     
+    public void DigitalDevicePressed(Vector frameVec, Vector frameType){
+        for (int i = 0; i< frameType.size(); i++){
+            if(frameType.get(i) != FRAMETYPE.DIGITAL){
+                javax.swing.JLabel tmp = (javax.swing.JLabel) frameVec.get(i);
+                tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png")));
+            }
+        }
+    }
+    
+    public void PMWDevicePressed(Vector frameVec, Vector frameType){
+        for (int i = 0; i< frameType.size(); i++){
+            if(frameType.get(i) != FRAMETYPE.PWM){
+                javax.swing.JLabel tmp = (javax.swing.JLabel) frameVec.get(i);
+                tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png")));
+            }
+        }
+    }
     private final int DELTA = 75;
     
     public enum BasicType {
