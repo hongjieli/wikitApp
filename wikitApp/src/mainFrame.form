@@ -118,6 +118,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="jLabelNoiseMouseDragged"/>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelNoiseMousePressed"/>
                     <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelNoiseMouseReleased"/>
                   </Events>
                   <Constraints>
@@ -141,7 +142,7 @@
                 <Component class="javax.swing.JLabel" name="frame1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/resource/white.imageset/write.png"/>
+                      <Image iconType="3" name="/resource/white.imageset/white.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -153,7 +154,7 @@
                 <Component class="javax.swing.JLabel" name="frame2">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/resource/white.imageset/write.png"/>
+                      <Image iconType="3" name="/resource/white.imageset/white.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -177,7 +178,7 @@
                 <Component class="javax.swing.JLabel" name="frame3">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/resource/white.imageset/write.png"/>
+                      <Image iconType="3" name="/resource/white.imageset/white.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -189,7 +190,7 @@
                 <Component class="javax.swing.JLabel" name="frame7">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/resource/white.imageset/write.png"/>
+                      <Image iconType="3" name="/resource/white.imageset/white.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -201,7 +202,7 @@
                 <Component class="javax.swing.JLabel" name="frame8">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/resource/white.imageset/write.png"/>
+                      <Image iconType="3" name="/resource/white.imageset/white.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -213,7 +214,7 @@
                 <Component class="javax.swing.JLabel" name="frame9">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/resource/white.imageset/write.png"/>
+                      <Image iconType="3" name="/resource/white.imageset/white.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -237,7 +238,7 @@
                 <Component class="javax.swing.JLabel" name="frame5">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/resource/white.imageset/write.png"/>
+                      <Image iconType="3" name="/resource/white.imageset/white.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -249,7 +250,7 @@
                 <Component class="javax.swing.JLabel" name="frame6">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/resource/white.imageset/write.png"/>
+                      <Image iconType="3" name="/resource/white.imageset/white.png"/>
                     </Property>
                   </Properties>
                   <Constraints>

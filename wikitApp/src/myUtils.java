@@ -29,6 +29,23 @@ public class myUtils{
         
         return returnIndex;
     }
+    public void AnalogDevicePressed(Vector frameVec, Vector frameType){
+        for (int i = 0; i< frameType.size(); i++){
+            if(frameType.get(i) != FRAMETYPE.ANALOG){
+                javax.swing.JLabel tmp = (javax.swing.JLabel) frameVec.get(i);
+                tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png")));
+            }
+        }
+    }
     
     private final int DELTA = 75;
+    
+    public enum BasicType {
+        ANALOG,
+        DIGITAL,
+        ANALOG_DIGITAL,
+        PWM,
+        INVALID;
+    }
+    public BasicType FRAMETYPE;
 }

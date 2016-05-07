@@ -4,6 +4,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.Vector;
 
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -21,6 +22,8 @@ public class mainFrame extends javax.swing.JFrame {
     public mainFrame() {
         initComponents();
         
+        utils = new myUtils();
+        
         //add all blank frame into vec
         this.frameVec = new Vector();
         this.frameVec.addElement(frame1);
@@ -34,8 +37,18 @@ public class mainFrame extends javax.swing.JFrame {
         this.frameVec.addElement(frame9);
         this.frameVec.addElement(frame10);
         
-        utils = new myUtils();
-        
+        //map the device type to the frame
+        this.frameType = new Vector();
+        this.frameType.addElement(utils.FRAMETYPE.ANALOG);
+        this.frameType.addElement(utils.FRAMETYPE.ANALOG);
+        this.frameType.addElement(utils.FRAMETYPE.ANALOG);
+        this.frameType.addElement(utils.FRAMETYPE.INVALID);
+        this.frameType.addElement(utils.FRAMETYPE.ANALOG);
+        this.frameType.addElement(utils.FRAMETYPE.DIGITAL);
+        this.frameType.addElement(utils.FRAMETYPE.DIGITAL);
+        this.frameType.addElement(utils.FRAMETYPE.DIGITAL);
+        this.frameType.addElement(utils.FRAMETYPE.PWM);
+        this.frameType.addElement(utils.FRAMETYPE.INVALID);  
     }
 
     /**
@@ -103,6 +116,9 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
         jLabelNoise.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabelNoiseMousePressed(evt);
+            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jLabelNoiseMouseReleased(evt);
             }
@@ -112,34 +128,34 @@ public class mainFrame extends javax.swing.JFrame {
         jLabelMainBoard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/MB.imageset/MB_small.png"))); // NOI18N
         jLayeredPane1.add(jLabelMainBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 146, -1, -1));
 
-        frame1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         jLayeredPane1.add(frame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 17, -1, -1));
 
-        frame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         jLayeredPane1.add(frame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 17, -1, -1));
 
         frame4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
         jLayeredPane1.add(frame4, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 17, -1, -1));
 
-        frame3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         jLayeredPane1.add(frame3, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 17, -1, -1));
 
-        frame7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         jLayeredPane1.add(frame7, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 368, -1, -1));
 
-        frame8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         jLayeredPane1.add(frame8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 368, -1, -1));
 
-        frame9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         jLayeredPane1.add(frame9, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 368, -1, -1));
 
         frame10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
         jLayeredPane1.add(frame10, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 368, -1, -1));
 
-        frame5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         jLayeredPane1.add(frame5, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 132, -1, -1));
 
-        frame6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/write.png"))); // NOI18N
+        frame6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         jLayeredPane1.add(frame6, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 266, -1, -1));
 
         jLabelLight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LS.imageset/LS_small.jpg"))); // NOI18N
@@ -230,7 +246,7 @@ public class mainFrame extends javax.swing.JFrame {
         }
         else{
             javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LD.imageset/LD_small.png")));
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_LD.png")));
         }
     }//GEN-LAST:event_jLabelNoiseMouseReleased
 
@@ -251,7 +267,7 @@ public class mainFrame extends javax.swing.JFrame {
         }
         else{
             javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LS.imageset/LS_small.jpg")));
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_LS.png")));
         }
     }//GEN-LAST:event_jLabelLightMouseReleased
 
@@ -284,7 +300,7 @@ public class mainFrame extends javax.swing.JFrame {
         }
         else{
             javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/buzzer.imageset/buzzer_small.jpg")));
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_buzzer.png")));
         }
     }//GEN-LAST:event_jLabelBuzzerMouseReleased
 
@@ -299,7 +315,7 @@ public class mainFrame extends javax.swing.JFrame {
         }
         else{
             javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/RGB.imageset/RGB_small.jpg")));
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_RGB.png")));
         }
     }//GEN-LAST:event_jLabelRGBMouseReleased
 
@@ -314,9 +330,14 @@ public class mainFrame extends javax.swing.JFrame {
         }
         else{
             javax.swing.JLabel tmp = (javax.swing.JLabel) this.frameVec.get(indexOfFrameVec);
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BAR.imageset/BAR_small.jpg")));
+            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_BAR.png")));
         }        
     }//GEN-LAST:event_jLabelBarMouseReleased
+
+    private void jLabelNoiseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNoiseMousePressed
+        // TODO add your handling code here:
+        this.utils.AnalogDevicePressed(this.frameVec, this.frameType);
+    }//GEN-LAST:event_jLabelNoiseMousePressed
 
     /**
      * @param args the command line arguments
@@ -381,5 +402,6 @@ public class mainFrame extends javax.swing.JFrame {
     
     //Hongjie: additional var.
     public Vector frameVec;
+    public Vector frameType;
     public myUtils utils;
 }
