@@ -15,16 +15,19 @@ public class myDeviceProperty {
     String deviceName;
     public myUtils.BasicType frameType;
     String iconPath;
+    String iconFramePath;
     javax.swing.JLabel labelEntity;
     int validNum;
+    
+    public myDeviceProperty() {
+    }
 
-    public myDeviceProperty(String deviceName, myUtils.BasicType frameType, String iconPath, JLabel labelEntity, int validNum) {
+    public myDeviceProperty(String deviceName, myUtils.BasicType frameType, String iconPath, String iconFramePath, JLabel labelEntity, int validNum) {
         this.deviceName = deviceName;
         this.frameType = frameType;
         this.iconPath = iconPath;
+        this.iconFramePath = iconFramePath;
         this.labelEntity = labelEntity;
         this.validNum = validNum;
-    }
-    
-    
+    }   
 }

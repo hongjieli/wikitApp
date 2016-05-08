@@ -26,23 +26,23 @@ public class mainFrame extends javax.swing.JFrame {
 
         //add all blank frame into vec
         this.vecFrameProperty = new Vector();
-        this.vecFrameProperty.addElement(new myFrameProperty("frame1", utils.myTYPE.ANALOG, false, "", "/resource/white.imageset/white.png", this.frame1, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame2", utils.myTYPE.ANALOG_DIGITAL, false, "", "/resource/white.imageset/white.png", this.frame2, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame3", utils.myTYPE.ANALOG, false, "", "/resource/white.imageset/white.png", this.frame3, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame4", utils.myTYPE.INVALID, false, "", "/resource/gray.imageset/grey.png", this.frame4, false));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame5", utils.myTYPE.ANALOG, false, "", "/resource/white.imageset/white.png", this.frame5, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame6", utils.myTYPE.DIGITAL, false, "", "/resource/white.imageset/white.png", this.frame6, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame7", utils.myTYPE.DIGITAL, false, "", "/resource/white.imageset/white.png", this.frame7, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame8", utils.myTYPE.DIGITAL, false, "", "/resource/white.imageset/white.png", this.frame8, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame9", utils.myTYPE.PWM, false, "", "/resource/white.imageset/white.png", this.frame9, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame10", utils.myTYPE.INVALID, false, "", "/resource/gray.imageset/grey.png", this.frame10, false));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame1", utils.myTYPE.ANALOG, false, "", iconPathWhite, this.frame1, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame2", utils.myTYPE.ANALOG_DIGITAL, false, "", iconPathWhite, this.frame2, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame3", utils.myTYPE.ANALOG, false, "", iconPathWhite, this.frame3, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame4", utils.myTYPE.INVALID, false, "", iconPathGrey, this.frame4, false));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame5", utils.myTYPE.ANALOG, false, "", iconPathWhite, this.frame5, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame6", utils.myTYPE.DIGITAL, false, "", iconPathWhite, this.frame6, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame7", utils.myTYPE.DIGITAL, false, "", iconPathWhite, this.frame7, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame8", utils.myTYPE.DIGITAL, false, "", iconPathWhite, this.frame8, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame9", utils.myTYPE.PWM, false, "", iconPathWhite, this.frame9, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame10", utils.myTYPE.INVALID, false, "", iconPathGrey, this.frame10, false));
 
         this.vecDeviceProperty = new Vector();
-        this.vecDeviceProperty.addElement(new myDeviceProperty("light", utils.myTYPE.ANALOG, "/resource/LS.imageset/LS_small.jpg", this.jLabelLight, 1));
-        this.vecDeviceProperty.addElement(new myDeviceProperty("buzzer", utils.myTYPE.ANALOG, "/resource/buzzer.imageset/buzzer_small.jpg", this.jLabelBuzzer, 1));
-        this.vecDeviceProperty.addElement(new myDeviceProperty("noise", utils.myTYPE.ANALOG, "/resource/LD.imageset/LD_small.png", this.jLabelNoise, 1));
-        this.vecDeviceProperty.addElement(new myDeviceProperty("rgb", utils.myTYPE.DIGITAL, "/resource/RGB.imageset/RGB_small.jpg", this.jLabelRGB, 1));
-        this.vecDeviceProperty.addElement(new myDeviceProperty("bar", utils.myTYPE.DIGITAL, "/resource/BAR.imageset/BAR_small.jpg", this.jLabelBar, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("LIGHT", utils.myTYPE.ANALOG, iconPathLight, iconPathLightFrame, this.jLabelLight, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("BUZZER", utils.myTYPE.ANALOG, iconPathBuzzer, iconPathBuzzerFrame, this.jLabelBuzzer, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("NOISE", utils.myTYPE.ANALOG, iconPathNoise, iconPathNoiseFrame, this.jLabelNoise, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("RGB", utils.myTYPE.DIGITAL, iconPathRgb, iconPathRgbFrame, this.jLabelRGB, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("BAR", utils.myTYPE.DIGITAL, iconPathBar, iconPathBarFrame, this.jLabelBar, 1));
     }
 
     /**
@@ -73,6 +73,14 @@ public class mainFrame extends javax.swing.JFrame {
         jLabelLight = new javax.swing.JLabel();
         jLabelBuzzer = new javax.swing.JLabel();
         jLabelRGB = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -123,9 +131,11 @@ public class mainFrame extends javax.swing.JFrame {
         jLayeredPane1.add(jLabelMainBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 146, -1, -1));
 
         frame1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
+        frame1.setToolTipText("");
         jLayeredPane1.add(frame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 17, -1, -1));
 
         frame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
+        frame2.setToolTipText("");
         jLayeredPane1.add(frame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 17, -1, -1));
 
         frame4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
@@ -194,7 +204,31 @@ public class mainFrame extends javax.swing.JFrame {
         });
         jLayeredPane1.add(jLabelRGB, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 242, 92, -1));
 
+        jLabel2.setText("ANALOG");
+        jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, 20));
+
+        jLabel3.setText("ANALOG");
+        jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, -1, 20));
+
+        jLabel4.setText("ANALOG");
+        jLayeredPane1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, -1, 20));
+
+        jLabel5.setText("DIGITAL");
+        jLayeredPane1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, -1, 20));
+
+        jLabel1.setText("ANALOG/DIGITAL");
+        jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, -1, 20));
+
         jPanel1.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel6.setText("DIGITAL");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 440, -1, 20));
+
+        jLabel7.setText("DIGITAL");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, 20));
+
+        jLabel8.setText("PWM");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, -1, 20));
 
         jTabbedPane1.addTab("Design", jPanel1);
 
@@ -213,11 +247,11 @@ public class mainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
         );
 
         pack();
@@ -234,13 +268,7 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
 
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
-        if (indexOfFrameVec < 0) {
-            System.out.println("No frame hit");
-        } else {
-            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_LD.png")));
-        }
+this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelNoise, vecDeviceProperty);
     }//GEN-LAST:event_jLabelNoiseMouseReleased
 
     private void jLabelLightMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLightMouseDragged
@@ -254,13 +282,7 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
 
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
-        if (indexOfFrameVec < 0) {
-            System.out.println("No frame hit");
-        } else {
-            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_LS.png")));
-        }
+        this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelLight, vecDeviceProperty);
     }//GEN-LAST:event_jLabelLightMouseReleased
 
     private void jLabelBuzzerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuzzerMouseDragged
@@ -286,13 +308,7 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
 
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
-        if (indexOfFrameVec < 0) {
-            System.out.println("No frame hit");
-        } else {
-            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_buzzer.png")));
-        }
+    this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelBuzzer, vecDeviceProperty);
     }//GEN-LAST:event_jLabelBuzzerMouseReleased
 
     private void jLabelRGBMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRGBMouseReleased
@@ -300,13 +316,7 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
 
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
-        if (indexOfFrameVec < 0) {
-            System.out.println("No frame hit");
-        } else {
-            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_RGB.png")));
-        }
+        this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelRGB, vecDeviceProperty);
     }//GEN-LAST:event_jLabelRGBMouseReleased
 
     private void jLabelBarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBarMouseReleased
@@ -314,13 +324,7 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
 
-        int indexOfFrameVec = this.utils.findFrameLocation(evt.getLocationOnScreen(), vecFrameProperty);
-        if (indexOfFrameVec < 0) {
-            System.out.println("No frame hit");
-        } else {
-            javax.swing.JLabel tmp = (javax.swing.JLabel) ((myFrameProperty) vecFrameProperty.get(indexOfFrameVec)).labelEntity;
-            tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white_BAR.png")));
-        }
+        this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelBar, vecDeviceProperty);   
     }//GEN-LAST:event_jLabelBarMouseReleased
 
     private void jLabelNoiseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNoiseMousePressed
@@ -374,6 +378,14 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel frame7;
     private javax.swing.JLabel frame8;
     private javax.swing.JLabel frame9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelBar;
     private javax.swing.JLabel jLabelBuzzer;
     private javax.swing.JLabel jLabelLight;
@@ -397,4 +409,16 @@ public class mainFrame extends javax.swing.JFrame {
 
     //const
     public final int iFrameNum = 10;
+    public final String iconPathWhite = "/resource/white.imageset/white.png";
+    public final String iconPathGrey = "/resource/gray.imageset/grey.png";
+    public final String iconPathLight = "/resource/LS.imageset/LS_small.jpg";
+    public final String iconPathBuzzer = "/resource/buzzer.imageset/buzzer_small.jpg";
+    public final String iconPathNoise = "/resource/LD.imageset/LD_small.png";
+    public final String iconPathRgb = "/resource/RGB.imageset/RGB_small.jpg";
+    public final String iconPathBar = "/resource/BAR.imageset/BAR_small.jpg";
+    public final String iconPathLightFrame = "/resource/white.imageset/white_LS.png";
+    public final String iconPathBuzzerFrame = "/resource/white.imageset/white_buzzer.png";
+    public final String iconPathNoiseFrame = "/resource/white.imageset/white_LD.png";
+    public final String iconPathRgbFrame = "/resource/white.imageset/white_RGB.png";
+    public final String iconPathBarFrame = "/resource/white.imageset/white_BAR.png";
 }
