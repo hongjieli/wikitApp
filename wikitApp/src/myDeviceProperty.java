@@ -11,24 +11,20 @@ import javax.swing.JLabel;
  *
  * @author honli
  */
-public class myFrameProperty {
-
-    String frameName;
+public class myDeviceProperty {
+    String deviceName;
     public myUtils.BasicType frameType;
-    Boolean bOcupied;
-    String sOcupiedDeviceName;
     String iconPath;
     javax.swing.JLabel labelEntity;
-    Boolean bValid;
+    int validNum;
 
-    public myFrameProperty(String frameName, myUtils.BasicType frameType, Boolean bOcupied, String sOcupiedDeviceName, String iconPath, JLabel labelEntity, Boolean bValid) {
-        this.frameName = frameName;
+    public myDeviceProperty(String deviceName, myUtils.BasicType frameType, String iconPath, JLabel labelEntity, int validNum) {
+        this.deviceName = deviceName;
         this.frameType = frameType;
-        this.bOcupied = bOcupied;
-        this.sOcupiedDeviceName = sOcupiedDeviceName;
         this.iconPath = iconPath;
         this.labelEntity = labelEntity;
-        this.bValid = bValid;
+        this.validNum = validNum;
     }
-
+    
+    
 }

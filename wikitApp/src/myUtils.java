@@ -17,8 +17,6 @@ public class myUtils{
         
         for(int i = 0; i < vecFrameProperty.size(); i++)
         {
-            //myFrameProperty framePropertyEntity = (myFrameProperty) vecFrameProperty.get(i);
-            //System.out.println("frame is " + framePropertyEntity.frameName);
             javax.swing.JLabel jLabelEntity = ((myFrameProperty) vecFrameProperty.get(i)).labelEntity;
             int deltaX = src.x - jLabelEntity.getLocationOnScreen().x;
             int deltaY = src.y - jLabelEntity.getLocationOnScreen().y;
@@ -33,7 +31,7 @@ public class myUtils{
     }
     public void AnalogDevicePressed(Vector frameVec, Vector frameType){
         for (int i = 0; i< frameType.size(); i++){
-            if(frameType.get(i) != FRAMETYPE.ANALOG){
+            if(frameType.get(i) != myTYPE.ANALOG){
                 javax.swing.JLabel tmp = (javax.swing.JLabel) frameVec.get(i);
                 tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png")));
             }
@@ -42,7 +40,7 @@ public class myUtils{
     
     public void DigitalDevicePressed(Vector frameVec, Vector frameType){
         for (int i = 0; i< frameType.size(); i++){
-            if(frameType.get(i) != FRAMETYPE.DIGITAL){
+            if(frameType.get(i) != myTYPE.DIGITAL){
                 javax.swing.JLabel tmp = (javax.swing.JLabel) frameVec.get(i);
                 tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png")));
             }
@@ -51,7 +49,7 @@ public class myUtils{
     
     public void PMWDevicePressed(Vector frameVec, Vector frameType){
         for (int i = 0; i< frameType.size(); i++){
-            if(frameType.get(i) != FRAMETYPE.PWM){
+            if(frameType.get(i) != myTYPE.PWM){
                 javax.swing.JLabel tmp = (javax.swing.JLabel) frameVec.get(i);
                 tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png")));
             }
@@ -66,5 +64,5 @@ public class myUtils{
         PWM,
         INVALID;
     }
-    public BasicType FRAMETYPE;
+    public BasicType myTYPE;
 }
