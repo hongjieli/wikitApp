@@ -48,46 +48,53 @@ public class myUtils {
                             "器件类型不匹配！",
                             "错误",
                             JOptionPane.ERROR_MESSAGE);
-                } else {
+                } else if(deviceEntity.validNum == 0){
+                    JOptionPane.showMessageDialog(null,
+                            "器件数量已满！",
+                            "错误",
+                            JOptionPane.ERROR_MESSAGE);
+                } 
+                else {
                     framePropertyEntity.bOcupied = true;
                     framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(deviceEntity.iconFramePath)));
 
-                    //FIXME need to update device num by -1
+                    deviceEntity.validNum = deviceEntity.validNum - 1;
                     //FIXME need to update backgroud logic here
                 }
                 break;
             }
         }
+        
+        //Update frameIcon at the end.
+        for (int i = 0; i < vecFrameProperty.size(); i++) {
+            myFrameProperty framePropertyEntity = (myFrameProperty) vecFrameProperty.get(i);
+            if(framePropertyEntity.bOcupied == false && framePropertyEntity.bValid == true){
+                framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconPathWhite)));
+            }                
+        }
 
         return returnIndex;
     }
-
-    public void AnalogDevicePressed(Vector frameVec, Vector frameType) {
-        for (int i = 0; i < frameType.size(); i++) {
-            if (frameType.get(i) != myTYPE.ANALOG) {
-                javax.swing.JLabel tmp = (javax.swing.JLabel) frameVec.get(i);
-                tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png")));
+    
+    public int DeviceLabelPressed(Vector vecFrameProperty, javax.swing.JLabel deviceLabel, Vector vecDeviceProperty){
+        int returnValue = -1;
+        
+        myDeviceProperty deviceEntity = new myDeviceProperty();
+        for (int i = 0; i < vecDeviceProperty.size(); i++) {
+            if (deviceLabel.getText().equals(((myDeviceProperty) vecDeviceProperty.get(i)).deviceName)) {
+                deviceEntity = (myDeviceProperty) vecDeviceProperty.get(i);
             }
         }
-    }
-
-    public void DigitalDevicePressed(Vector frameVec, Vector frameType) {
-        for (int i = 0; i < frameType.size(); i++) {
-            if (frameType.get(i) != myTYPE.DIGITAL) {
-                javax.swing.JLabel tmp = (javax.swing.JLabel) frameVec.get(i);
-                tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png")));
+        for (int i = 0; i < vecFrameProperty.size(); i++) {
+            myFrameProperty framePropertyEntity = (myFrameProperty) vecFrameProperty.get(i);
+            if (framePropertyEntity.frameType != deviceEntity.frameType && framePropertyEntity.bOcupied == false && framePropertyEntity.bValid == true){
+                framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconPathGrey)));
             }
         }
+        
+        return returnValue;
     }
-
-    public void PMWDevicePressed(Vector frameVec, Vector frameType) {
-        for (int i = 0; i < frameType.size(); i++) {
-            if (frameType.get(i) != myTYPE.PWM) {
-                javax.swing.JLabel tmp = (javax.swing.JLabel) frameVec.get(i);
-                tmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png")));
-            }
-        }
-    }
+    
     private final int DELTA = 75;
 
     public enum BasicType {
@@ -98,4 +105,17 @@ public class myUtils {
         INVALID;
     }
     public BasicType myTYPE;
+    
+    public final String iconPathWhite = "/resource/white.imageset/white.png";
+    public final String iconPathGrey = "/resource/gray.imageset/grey.png";
+    public final String iconPathLight = "/resource/LS.imageset/LS_small.jpg";
+    public final String iconPathBuzzer = "/resource/buzzer.imageset/buzzer_small.jpg";
+    public final String iconPathNoise = "/resource/LD.imageset/LD_small.png";
+    public final String iconPathRgb = "/resource/RGB.imageset/RGB_small.jpg";
+    public final String iconPathBar = "/resource/BAR.imageset/BAR_small.jpg";
+    public final String iconPathLightFrame = "/resource/white.imageset/white_LS.png";
+    public final String iconPathBuzzerFrame = "/resource/white.imageset/white_buzzer.png";
+    public final String iconPathNoiseFrame = "/resource/white.imageset/white_LD.png";
+    public final String iconPathRgbFrame = "/resource/white.imageset/white_RGB.png";
+    public final String iconPathBarFrame = "/resource/white.imageset/white_BAR.png";
 }

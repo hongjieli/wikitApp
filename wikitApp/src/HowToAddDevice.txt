@@ -1,0 +1,3 @@
+In GUI
+1. need to initial it in construction area.
+2. add press/drag/release callback

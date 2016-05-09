@@ -2,6 +2,7 @@
 import java.awt.Cursor;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
 import java.util.Vector;
 
 
@@ -26,23 +27,23 @@ public class mainFrame extends javax.swing.JFrame {
 
         //add all blank frame into vec
         this.vecFrameProperty = new Vector();
-        this.vecFrameProperty.addElement(new myFrameProperty("frame1", utils.myTYPE.ANALOG, false, "", iconPathWhite, this.frame1, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame2", utils.myTYPE.ANALOG_DIGITAL, false, "", iconPathWhite, this.frame2, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame3", utils.myTYPE.ANALOG, false, "", iconPathWhite, this.frame3, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame4", utils.myTYPE.INVALID, false, "", iconPathGrey, this.frame4, false));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame5", utils.myTYPE.ANALOG, false, "", iconPathWhite, this.frame5, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame6", utils.myTYPE.DIGITAL, false, "", iconPathWhite, this.frame6, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame7", utils.myTYPE.DIGITAL, false, "", iconPathWhite, this.frame7, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame8", utils.myTYPE.DIGITAL, false, "", iconPathWhite, this.frame8, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame9", utils.myTYPE.PWM, false, "", iconPathWhite, this.frame9, true));
-        this.vecFrameProperty.addElement(new myFrameProperty("frame10", utils.myTYPE.INVALID, false, "", iconPathGrey, this.frame10, false));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame1", utils.myTYPE.ANALOG, false, "", utils.iconPathWhite, this.frame1, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame2", utils.myTYPE.ANALOG_DIGITAL, false, "", utils.iconPathWhite, this.frame2, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame3", utils.myTYPE.ANALOG, false, "", utils.iconPathWhite, this.frame3, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame4", utils.myTYPE.INVALID, false, "", utils.iconPathGrey, this.frame4, false));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame5", utils.myTYPE.ANALOG, false, "", utils.iconPathWhite, this.frame5, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame6", utils.myTYPE.DIGITAL, false, "", utils.iconPathWhite, this.frame6, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame7", utils.myTYPE.DIGITAL, false, "", utils.iconPathWhite, this.frame7, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame8", utils.myTYPE.DIGITAL, false, "", utils.iconPathWhite, this.frame8, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame9", utils.myTYPE.PWM, false, "", utils.iconPathWhite, this.frame9, true));
+        this.vecFrameProperty.addElement(new myFrameProperty("frame10", utils.myTYPE.INVALID, false, "", utils.iconPathGrey, this.frame10, false));
 
         this.vecDeviceProperty = new Vector();
-        this.vecDeviceProperty.addElement(new myDeviceProperty("LIGHT", utils.myTYPE.ANALOG, iconPathLight, iconPathLightFrame, this.jLabelLight, 1));
-        this.vecDeviceProperty.addElement(new myDeviceProperty("BUZZER", utils.myTYPE.ANALOG, iconPathBuzzer, iconPathBuzzerFrame, this.jLabelBuzzer, 1));
-        this.vecDeviceProperty.addElement(new myDeviceProperty("NOISE", utils.myTYPE.ANALOG, iconPathNoise, iconPathNoiseFrame, this.jLabelNoise, 1));
-        this.vecDeviceProperty.addElement(new myDeviceProperty("RGB", utils.myTYPE.DIGITAL, iconPathRgb, iconPathRgbFrame, this.jLabelRGB, 1));
-        this.vecDeviceProperty.addElement(new myDeviceProperty("BAR", utils.myTYPE.DIGITAL, iconPathBar, iconPathBarFrame, this.jLabelBar, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("LIGHT", utils.myTYPE.ANALOG, utils.iconPathLight, utils.iconPathLightFrame, this.jLabelLight, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("BUZZER", utils.myTYPE.ANALOG, utils.iconPathBuzzer, utils.iconPathBuzzerFrame, this.jLabelBuzzer, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("NOISE", utils.myTYPE.ANALOG, utils.iconPathNoise, utils.iconPathNoiseFrame, this.jLabelNoise, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("RGB", utils.myTYPE.DIGITAL, utils.iconPathRgb, utils.iconPathRgbFrame, this.jLabelRGB, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("BAR", utils.myTYPE.DIGITAL, utils.iconPathBar, utils.iconPathBarFrame, this.jLabelBar, 1));
     }
 
     /**
@@ -104,6 +105,9 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
         jLabelBar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabelBarMousePressed(evt);
+            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jLabelBarMouseReleased(evt);
             }
@@ -132,6 +136,11 @@ public class mainFrame extends javax.swing.JFrame {
 
         frame1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame1.setToolTipText("");
+        frame1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frame1MouseClicked(evt);
+            }
+        });
         jLayeredPane1.add(frame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 17, -1, -1));
 
         frame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
@@ -170,6 +179,9 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
         jLabelLight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabelLightMousePressed(evt);
+            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jLabelLightMouseReleased(evt);
             }
@@ -184,6 +196,9 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
         jLabelBuzzer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabelBuzzerMousePressed(evt);
+            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jLabelBuzzerMouseReleased(evt);
             }
@@ -198,6 +213,9 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
         jLabelRGB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabelRGBMousePressed(evt);
+            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jLabelRGBMouseReleased(evt);
             }
@@ -324,13 +342,40 @@ this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.j
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
 
-        this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelBar, vecDeviceProperty);   
+        this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelBar, vecDeviceProperty);
     }//GEN-LAST:event_jLabelBarMouseReleased
 
     private void jLabelNoiseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNoiseMousePressed
         // TODO add your handling code here:
-        //this.utils.AnalogDevicePressed(this.vecFrameProperty, this.frameType);
+        this.utils.DeviceLabelPressed(vecFrameProperty, this.jLabelNoise, vecDeviceProperty);
     }//GEN-LAST:event_jLabelNoiseMousePressed
+
+    private void frame1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame1MouseClicked
+        // TODO add your handling code here:
+        if(evt.getButton() == MouseEvent.BUTTON3 ){
+            System.out.println("youjian");
+        }
+    }//GEN-LAST:event_frame1MouseClicked
+
+    private void jLabelLightMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLightMousePressed
+        // TODO add your handling code here:
+        this.utils.DeviceLabelPressed(vecFrameProperty, this.jLabelLight, vecDeviceProperty);
+    }//GEN-LAST:event_jLabelLightMousePressed
+
+    private void jLabelBuzzerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBuzzerMousePressed
+        // TODO add your handling code here:
+        this.utils.DeviceLabelPressed(vecFrameProperty, this.jLabelBuzzer, vecDeviceProperty);
+    }//GEN-LAST:event_jLabelBuzzerMousePressed
+
+    private void jLabelRGBMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRGBMousePressed
+        // TODO add your handling code here:
+        this.utils.DeviceLabelPressed(vecFrameProperty, this.jLabelRGB, vecDeviceProperty);
+    }//GEN-LAST:event_jLabelRGBMousePressed
+
+    private void jLabelBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBarMousePressed
+        // TODO add your handling code here:
+        this.utils.DeviceLabelPressed(vecFrameProperty, this.jLabelBar, vecDeviceProperty);
+    }//GEN-LAST:event_jLabelBarMousePressed
 
     /**
      * @param args the command line arguments
@@ -409,16 +454,16 @@ this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.j
 
     //const
     public final int iFrameNum = 10;
-    public final String iconPathWhite = "/resource/white.imageset/white.png";
-    public final String iconPathGrey = "/resource/gray.imageset/grey.png";
-    public final String iconPathLight = "/resource/LS.imageset/LS_small.jpg";
-    public final String iconPathBuzzer = "/resource/buzzer.imageset/buzzer_small.jpg";
-    public final String iconPathNoise = "/resource/LD.imageset/LD_small.png";
-    public final String iconPathRgb = "/resource/RGB.imageset/RGB_small.jpg";
-    public final String iconPathBar = "/resource/BAR.imageset/BAR_small.jpg";
-    public final String iconPathLightFrame = "/resource/white.imageset/white_LS.png";
-    public final String iconPathBuzzerFrame = "/resource/white.imageset/white_buzzer.png";
-    public final String iconPathNoiseFrame = "/resource/white.imageset/white_LD.png";
-    public final String iconPathRgbFrame = "/resource/white.imageset/white_RGB.png";
-    public final String iconPathBarFrame = "/resource/white.imageset/white_BAR.png";
+//    public final String iconPathWhite = "/resource/white.imageset/white.png";
+//    public final String iconPathGrey = "/resource/gray.imageset/grey.png";
+//    public final String iconPathLight = "/resource/LS.imageset/LS_small.jpg";
+//    public final String iconPathBuzzer = "/resource/buzzer.imageset/buzzer_small.jpg";
+//    public final String iconPathNoise = "/resource/LD.imageset/LD_small.png";
+//    public final String iconPathRgb = "/resource/RGB.imageset/RGB_small.jpg";
+//    public final String iconPathBar = "/resource/BAR.imageset/BAR_small.jpg";
+//    public final String iconPathLightFrame = "/resource/white.imageset/white_LS.png";
+//    public final String iconPathBuzzerFrame = "/resource/white.imageset/white_buzzer.png";
+//    public final String iconPathNoiseFrame = "/resource/white.imageset/white_LD.png";
+//    public final String iconPathRgbFrame = "/resource/white.imageset/white_RGB.png";
+//    public final String iconPathBarFrame = "/resource/white.imageset/white_BAR.png";
 }
