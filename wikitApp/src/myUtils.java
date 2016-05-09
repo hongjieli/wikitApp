@@ -112,7 +112,7 @@ public class myUtils {
                         JMenuItem item1 = new JMenuItem("Delete");
                         item1.addActionListener(new ActionListener() {
                             public void actionPerformed(ActionEvent e) {
-                                System.out.println("delete...");
+                                //System.out.println("delete...");
 
                                 for (int i = 0; i < vecDeviceProperty.size(); i++) {
                                     myDeviceProperty deviceEntity = (myDeviceProperty) vecDeviceProperty.get(i);
@@ -124,6 +124,8 @@ public class myUtils {
                                 framePropertyEntity.bOcupied = false;
                                 framePropertyEntity.sOcupiedDeviceName = "";
                                 framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconPathWhite)));
+                                
+                                //FIXME need to update backgroud logic here
                             }
                         });
                         popup.add(item1);
@@ -161,9 +163,12 @@ public class myUtils {
     public final String iconPathNoise = "/resource/LD.imageset/LD_small.png";
     public final String iconPathRgb = "/resource/RGB.imageset/RGB_small.jpg";
     public final String iconPathBar = "/resource/BAR.imageset/BAR_small.jpg";
+    public final String iconPathServo = "/resource/servo.imageset/micro servo_small.png";
     public final String iconPathLightFrame = "/resource/white.imageset/white_LS.png";
     public final String iconPathBuzzerFrame = "/resource/white.imageset/white_buzzer.png";
     public final String iconPathNoiseFrame = "/resource/white.imageset/white_LD.png";
     public final String iconPathRgbFrame = "/resource/white.imageset/white_RGB.png";
     public final String iconPathBarFrame = "/resource/white.imageset/white_BAR.png";
+    public final String iconPathServoFrame = "/resource/white.imageset/white_servo.png";
+    
 }

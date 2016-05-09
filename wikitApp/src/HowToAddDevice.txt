@@ -1,3 +1,4 @@
-In GUI
-1. need to initial it in construction area.
-2. add press/drag/release callback
+in mainFrame:
+    add icon path 
+    need to initial it in construction area.
+    add press/drag/release callback

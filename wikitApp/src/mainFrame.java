@@ -48,6 +48,7 @@ public class mainFrame extends javax.swing.JFrame {
         this.vecDeviceProperty.addElement(new myDeviceProperty("NOISE", utils.myTYPE.ANALOG, utils.iconPathNoise, utils.iconPathNoiseFrame, this.jLabelNoise, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("RGB", utils.myTYPE.DIGITAL, utils.iconPathRgb, utils.iconPathRgbFrame, this.jLabelRGB, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("BAR", utils.myTYPE.DIGITAL, utils.iconPathBar, utils.iconPathBarFrame, this.jLabelBar, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("SERVO", utils.myTYPE.PWM, utils.iconPathServo, utils.iconPathServoFrame, this.jLabelServo, 1));
     }
 
     /**
@@ -83,6 +84,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabelServo = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -276,6 +278,23 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel1.setText("ANALOG/DIGITAL");
         jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, -1, 20));
 
+        jLabelServo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/servo.imageset/micro servo_small.png"))); // NOI18N
+        jLabelServo.setText("SERVO");
+        jLabelServo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabelServoMouseDragged(evt);
+            }
+        });
+        jLabelServo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabelServoMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelServoMouseReleased(evt);
+            }
+        });
+        jLayeredPane1.add(jLabelServo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+
         jPanel1.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel6.setText("DIGITAL");
@@ -449,6 +468,25 @@ public class mainFrame extends javax.swing.JFrame {
         utils.framePopupMenu(frame9, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame9MouseClicked
 
+    private void jLabelServoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelServoMouseDragged
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(MOVE_CURSOR);
+        this.setCursor(cur);
+    }//GEN-LAST:event_jLabelServoMouseDragged
+
+    private void jLabelServoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelServoMousePressed
+        // TODO add your handling code here:
+        this.utils.DeviceLabelPressed(vecFrameProperty, this.jLabelServo, vecDeviceProperty);
+    }//GEN-LAST:event_jLabelServoMousePressed
+
+    private void jLabelServoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelServoMouseReleased
+        // TODO add your handling code here:
+        Cursor cur = new Cursor(DEFAULT_CURSOR);
+        this.setCursor(cur);
+
+        this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelServo, vecDeviceProperty);
+    }//GEN-LAST:event_jLabelServoMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -509,6 +547,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMainBoard;
     private javax.swing.JLabel jLabelNoise;
     private javax.swing.JLabel jLabelRGB;
+    private javax.swing.JLabel jLabelServo;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
