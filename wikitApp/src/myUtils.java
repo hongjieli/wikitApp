@@ -1,7 +1,12 @@
 
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.util.Vector;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -48,14 +53,14 @@ public class myUtils {
                             "器件类型不匹配！",
                             "错误",
                             JOptionPane.ERROR_MESSAGE);
-                } else if(deviceEntity.validNum == 0){
+                } else if (deviceEntity.validNum == 0) {
                     JOptionPane.showMessageDialog(null,
                             "器件数量已满！",
                             "错误",
                             JOptionPane.ERROR_MESSAGE);
-                } 
-                else {
+                } else {
                     framePropertyEntity.bOcupied = true;
+                    framePropertyEntity.sOcupiedDeviceName = deviceLabel.getText();
                     framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(deviceEntity.iconFramePath)));
 
                     deviceEntity.validNum = deviceEntity.validNum - 1;
@@ -64,21 +69,21 @@ public class myUtils {
                 break;
             }
         }
-        
+
         //Update frameIcon at the end.
         for (int i = 0; i < vecFrameProperty.size(); i++) {
             myFrameProperty framePropertyEntity = (myFrameProperty) vecFrameProperty.get(i);
-            if(framePropertyEntity.bOcupied == false && framePropertyEntity.bValid == true){
+            if (framePropertyEntity.bOcupied == false && framePropertyEntity.bValid == true) {
                 framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconPathWhite)));
-            }                
+            }
         }
 
         return returnIndex;
     }
-    
-    public int DeviceLabelPressed(Vector vecFrameProperty, javax.swing.JLabel deviceLabel, Vector vecDeviceProperty){
+
+    public int DeviceLabelPressed(Vector vecFrameProperty, javax.swing.JLabel deviceLabel, Vector vecDeviceProperty) {
         int returnValue = -1;
-        
+
         myDeviceProperty deviceEntity = new myDeviceProperty();
         for (int i = 0; i < vecDeviceProperty.size(); i++) {
             if (deviceLabel.getText().equals(((myDeviceProperty) vecDeviceProperty.get(i)).deviceName)) {
@@ -87,14 +92,57 @@ public class myUtils {
         }
         for (int i = 0; i < vecFrameProperty.size(); i++) {
             myFrameProperty framePropertyEntity = (myFrameProperty) vecFrameProperty.get(i);
-            if (framePropertyEntity.frameType != deviceEntity.frameType && framePropertyEntity.bOcupied == false && framePropertyEntity.bValid == true){
+            if (framePropertyEntity.frameType != deviceEntity.frameType && framePropertyEntity.bOcupied == false && framePropertyEntity.bValid == true) {
                 framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconPathGrey)));
             }
         }
-        
+
         return returnValue;
     }
-    
+
+    public void framePopupMenu(javax.swing.JLabel frameLabel, Vector vecFrameProperty, final Vector vecDeviceProperty, java.awt.event.MouseEvent evt) {
+        if (evt.getButton() == MouseEvent.BUTTON3) {
+            for (int i = 0; i < vecFrameProperty.size(); i++) {
+                final myFrameProperty framePropertyEntity = (myFrameProperty) vecFrameProperty.get(i);
+                if (framePropertyEntity.labelEntity.equals(frameLabel) && framePropertyEntity.bOcupied) {
+                    JPopupMenu popup = null;
+                    if (popup == null) {
+                        popup = new JPopupMenu("Popup");
+
+                        JMenuItem item1 = new JMenuItem("Delete");
+                        item1.addActionListener(new ActionListener() {
+                            public void actionPerformed(ActionEvent e) {
+                                System.out.println("delete...");
+
+                                for (int i = 0; i < vecDeviceProperty.size(); i++) {
+                                    myDeviceProperty deviceEntity = (myDeviceProperty) vecDeviceProperty.get(i);
+                                    if(deviceEntity.deviceName.equals(framePropertyEntity.sOcupiedDeviceName)){
+                                        deviceEntity.validNum = deviceEntity.validNum +1;
+                                    }
+                                }
+
+                                framePropertyEntity.bOcupied = false;
+                                framePropertyEntity.sOcupiedDeviceName = "";
+                                framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconPathWhite)));
+                            }
+                        });
+                        popup.add(item1);
+
+//            JMenuItem item2 = new JMenuItem("Red");
+//            item2.addActionListener(new ActionListener() {
+//                public void actionPerformed(ActionEvent e) {
+//
+//                }
+//            });
+//            popup.add(item2);
+                    }
+                    popup.show(evt.getComponent(), evt.getX(), evt.getY());
+
+                }
+            }
+        }
+    }
+
     private final int DELTA = 75;
 
     public enum BasicType {
@@ -105,7 +153,7 @@ public class myUtils {
         INVALID;
     }
     public BasicType myTYPE;
-    
+
     public final String iconPathWhite = "/resource/white.imageset/white.png";
     public final String iconPathGrey = "/resource/gray.imageset/grey.png";
     public final String iconPathLight = "/resource/LS.imageset/LS_small.jpg";

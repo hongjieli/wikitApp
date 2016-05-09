@@ -21,6 +21,9 @@ public class myFrameProperty {
     javax.swing.JLabel labelEntity;
     Boolean bValid;
 
+    public myFrameProperty() {
+    }
+    
     public myFrameProperty(String frameName, myUtils.BasicType frameType, Boolean bOcupied, String sOcupiedDeviceName, String iconPath, JLabel labelEntity, Boolean bValid) {
         this.frameName = frameName;
         this.frameType = frameType;

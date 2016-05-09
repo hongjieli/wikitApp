@@ -2,8 +2,12 @@
 import java.awt.Cursor;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 
 
 /*
@@ -145,30 +149,65 @@ public class mainFrame extends javax.swing.JFrame {
 
         frame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame2.setToolTipText("");
+        frame2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frame2MouseClicked(evt);
+            }
+        });
         jLayeredPane1.add(frame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 17, -1, -1));
 
         frame4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
         jLayeredPane1.add(frame4, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 17, -1, -1));
 
         frame3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
+        frame3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frame3MouseClicked(evt);
+            }
+        });
         jLayeredPane1.add(frame3, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 17, -1, -1));
 
         frame7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
+        frame7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frame7MouseClicked(evt);
+            }
+        });
         jLayeredPane1.add(frame7, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 368, -1, -1));
 
         frame8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
+        frame8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frame8MouseClicked(evt);
+            }
+        });
         jLayeredPane1.add(frame8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 368, -1, -1));
 
         frame9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
+        frame9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frame9MouseClicked(evt);
+            }
+        });
         jLayeredPane1.add(frame9, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 368, -1, -1));
 
         frame10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
         jLayeredPane1.add(frame10, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 368, -1, -1));
 
         frame5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
+        frame5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frame5MouseClicked(evt);
+            }
+        });
         jLayeredPane1.add(frame5, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 132, -1, -1));
 
         frame6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
+        frame6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frame6MouseClicked(evt);
+            }
+        });
         jLayeredPane1.add(frame6, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 266, -1, -1));
 
         jLabelLight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LS.imageset/LS_small.jpg"))); // NOI18N
@@ -286,7 +325,7 @@ public class mainFrame extends javax.swing.JFrame {
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
 
-this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelNoise, vecDeviceProperty);
+        this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelNoise, vecDeviceProperty);
     }//GEN-LAST:event_jLabelNoiseMouseReleased
 
     private void jLabelLightMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLightMouseDragged
@@ -326,7 +365,7 @@ this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.j
         Cursor cur = new Cursor(DEFAULT_CURSOR);
         this.setCursor(cur);
 
-    this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelBuzzer, vecDeviceProperty);
+        this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.jLabelBuzzer, vecDeviceProperty);
     }//GEN-LAST:event_jLabelBuzzerMouseReleased
 
     private void jLabelRGBMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRGBMouseReleased
@@ -352,9 +391,7 @@ this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.j
 
     private void frame1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame1MouseClicked
         // TODO add your handling code here:
-        if(evt.getButton() == MouseEvent.BUTTON3 ){
-            System.out.println("youjian");
-        }
+        utils.framePopupMenu(frame1, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame1MouseClicked
 
     private void jLabelLightMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLightMousePressed
@@ -376,6 +413,41 @@ this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.j
         // TODO add your handling code here:
         this.utils.DeviceLabelPressed(vecFrameProperty, this.jLabelBar, vecDeviceProperty);
     }//GEN-LAST:event_jLabelBarMousePressed
+
+    private void frame2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame2MouseClicked
+        // TODO add your handling code here:
+        utils.framePopupMenu(frame2, vecFrameProperty, vecDeviceProperty, evt);
+    }//GEN-LAST:event_frame2MouseClicked
+
+    private void frame3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame3MouseClicked
+        // TODO add your handling code here:
+        utils.framePopupMenu(frame3, vecFrameProperty, vecDeviceProperty, evt);
+    }//GEN-LAST:event_frame3MouseClicked
+
+    private void frame5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame5MouseClicked
+        // TODO add your handling code here:
+        utils.framePopupMenu(frame5, vecFrameProperty, vecDeviceProperty, evt);
+    }//GEN-LAST:event_frame5MouseClicked
+
+    private void frame6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame6MouseClicked
+        // TODO add your handling code here:
+        utils.framePopupMenu(frame6, vecFrameProperty, vecDeviceProperty, evt);
+    }//GEN-LAST:event_frame6MouseClicked
+
+    private void frame7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame7MouseClicked
+        // TODO add your handling code here:
+        utils.framePopupMenu(frame7, vecFrameProperty, vecDeviceProperty, evt);
+    }//GEN-LAST:event_frame7MouseClicked
+
+    private void frame8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame8MouseClicked
+        // TODO add your handling code here:
+        utils.framePopupMenu(frame8, vecFrameProperty, vecDeviceProperty, evt);
+    }//GEN-LAST:event_frame8MouseClicked
+
+    private void frame9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame9MouseClicked
+        // TODO add your handling code here:
+        utils.framePopupMenu(frame9, vecFrameProperty, vecDeviceProperty, evt);
+    }//GEN-LAST:event_frame9MouseClicked
 
     /**
      * @param args the command line arguments
@@ -449,21 +521,8 @@ this.utils.DragDownOperation(evt.getLocationOnScreen(), vecFrameProperty, this.j
     //Hongjie: additional var.
     public Vector vecFrameProperty;
     public Vector vecDeviceProperty;
-    //public Vector frameType;
     public myUtils utils;
 
     //const
     public final int iFrameNum = 10;
-//    public final String iconPathWhite = "/resource/white.imageset/white.png";
-//    public final String iconPathGrey = "/resource/gray.imageset/grey.png";
-//    public final String iconPathLight = "/resource/LS.imageset/LS_small.jpg";
-//    public final String iconPathBuzzer = "/resource/buzzer.imageset/buzzer_small.jpg";
-//    public final String iconPathNoise = "/resource/LD.imageset/LD_small.png";
-//    public final String iconPathRgb = "/resource/RGB.imageset/RGB_small.jpg";
-//    public final String iconPathBar = "/resource/BAR.imageset/BAR_small.jpg";
-//    public final String iconPathLightFrame = "/resource/white.imageset/white_LS.png";
-//    public final String iconPathBuzzerFrame = "/resource/white.imageset/white_buzzer.png";
-//    public final String iconPathNoiseFrame = "/resource/white.imageset/white_LD.png";
-//    public final String iconPathRgbFrame = "/resource/white.imageset/white_RGB.png";
-//    public final String iconPathBarFrame = "/resource/white.imageset/white_BAR.png";
 }
