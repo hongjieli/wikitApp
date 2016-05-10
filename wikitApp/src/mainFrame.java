@@ -43,12 +43,25 @@ public class mainFrame extends javax.swing.JFrame {
         this.vecFrameProperty.addElement(new myFrameProperty("frame10", utils.myTYPE.INVALID, false, "", utils.iconPathGrey, this.frame10, false));
 
         this.vecDeviceProperty = new Vector();
-        this.vecDeviceProperty.addElement(new myDeviceProperty("LIGHT", utils.myTYPE.ANALOG, utils.iconPathLight, utils.iconPathLightFrame, this.jLabelLight, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("LIGHT", utils.myTYPE.ANALOG, utils.iconPathLight, utils.iconPathLightFrame, this.jLabelLight, 2));
         this.vecDeviceProperty.addElement(new myDeviceProperty("BUZZER", utils.myTYPE.ANALOG, utils.iconPathBuzzer, utils.iconPathBuzzerFrame, this.jLabelBuzzer, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("NOISE", utils.myTYPE.ANALOG, utils.iconPathNoise, utils.iconPathNoiseFrame, this.jLabelNoise, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("RGB", utils.myTYPE.DIGITAL, utils.iconPathRgb, utils.iconPathRgbFrame, this.jLabelRGB, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("BAR", utils.myTYPE.DIGITAL, utils.iconPathBar, utils.iconPathBarFrame, this.jLabelBar, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("SERVO", utils.myTYPE.PWM, utils.iconPathServo, utils.iconPathServoFrame, this.jLabelServo, 1));
+        
+        this.jLabelLight.setName("LIGHT");
+        this.jLabelBar.setName("BAR");
+        this.jLabelBuzzer.setName("BUZZER");
+        this.jLabelNoise.setName("NOISE");
+        this.jLabelRGB.setName("RGB");
+        this.jLabelServo.setName("SERVO");
+        
+        for (int i = 0; i < vecDeviceProperty.size(); i++){
+            myDeviceProperty entity = (myDeviceProperty) vecDeviceProperty.get(i);
+            entity.labelEntity.setText(entity.labelEntity.getName() + " X " + entity.validNum );
+        }
+        
     }
 
     /**
@@ -118,7 +131,7 @@ public class mainFrame extends javax.swing.JFrame {
                 jLabelBarMouseReleased(evt);
             }
         });
-        jLayeredPane1.add(jLabelBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 310, 92, -1));
+        jLayeredPane1.add(jLabelBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 310, 190, -1));
 
         jLabelNoise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LD.imageset/LD_small.png"))); // NOI18N
         jLabelNoise.setText("NOISE");
@@ -135,7 +148,7 @@ public class mainFrame extends javax.swing.JFrame {
                 jLabelNoiseMouseReleased(evt);
             }
         });
-        jLayeredPane1.add(jLabelNoise, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 174, 92, -1));
+        jLayeredPane1.add(jLabelNoise, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 174, 190, -1));
 
         jLabelMainBoard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/MB.imageset/MB_small.png"))); // NOI18N
         jLayeredPane1.add(jLabelMainBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 146, -1, -1));
@@ -227,7 +240,7 @@ public class mainFrame extends javax.swing.JFrame {
                 jLabelLightMouseReleased(evt);
             }
         });
-        jLayeredPane1.add(jLabelLight, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 38, 92, -1));
+        jLayeredPane1.add(jLabelLight, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 38, 180, -1));
 
         jLabelBuzzer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/buzzer.imageset/buzzer_small.jpg"))); // NOI18N
         jLabelBuzzer.setText("BUZZER");
@@ -244,7 +257,7 @@ public class mainFrame extends javax.swing.JFrame {
                 jLabelBuzzerMouseReleased(evt);
             }
         });
-        jLayeredPane1.add(jLabelBuzzer, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 106, -1, -1));
+        jLayeredPane1.add(jLabelBuzzer, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 106, 190, -1));
 
         jLabelRGB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/RGB.imageset/RGB_small.jpg"))); // NOI18N
         jLabelRGB.setText("RGB");
@@ -261,7 +274,7 @@ public class mainFrame extends javax.swing.JFrame {
                 jLabelRGBMouseReleased(evt);
             }
         });
-        jLayeredPane1.add(jLabelRGB, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 242, 92, -1));
+        jLayeredPane1.add(jLabelRGB, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 242, 190, -1));
 
         jLabel2.setText("ANALOG");
         jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, 20));
@@ -293,7 +306,7 @@ public class mainFrame extends javax.swing.JFrame {
                 jLabelServoMouseReleased(evt);
             }
         });
-        jLayeredPane1.add(jLabelServo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        jLayeredPane1.add(jLabelServo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 190, -1));
 
         jPanel1.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

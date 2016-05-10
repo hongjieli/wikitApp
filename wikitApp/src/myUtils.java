@@ -25,7 +25,7 @@ public class myUtils {
         //System.out.println(deviceLabel.getText());
         myDeviceProperty deviceEntity = new myDeviceProperty();
         for (int i = 0; i < vecDeviceProperty.size(); i++) {
-            if (deviceLabel.getText().equals(((myDeviceProperty) vecDeviceProperty.get(i)).deviceName)) {
+            if (deviceLabel.getName().equals(((myDeviceProperty) vecDeviceProperty.get(i)).deviceName)) {
                 deviceEntity = (myDeviceProperty) vecDeviceProperty.get(i);
                 //System.out.println("label:" + deviceLabel.getText() + " is hit");
             }
@@ -55,15 +55,16 @@ public class myUtils {
                             JOptionPane.ERROR_MESSAGE);
                 } else if (deviceEntity.validNum == 0) {
                     JOptionPane.showMessageDialog(null,
-                            "器件数量已满！",
+                            "器件数量已用完！",
                             "错误",
                             JOptionPane.ERROR_MESSAGE);
                 } else {
                     framePropertyEntity.bOcupied = true;
-                    framePropertyEntity.sOcupiedDeviceName = deviceLabel.getText();
+                    framePropertyEntity.sOcupiedDeviceName = deviceLabel.getName();
                     framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(deviceEntity.iconFramePath)));
 
                     deviceEntity.validNum = deviceEntity.validNum - 1;
+                    deviceEntity.labelEntity.setText(deviceEntity.labelEntity.getName() + " X " + deviceEntity.validNum);
                     //FIXME need to update backgroud logic here
                 }
                 break;
@@ -86,7 +87,7 @@ public class myUtils {
 
         myDeviceProperty deviceEntity = new myDeviceProperty();
         for (int i = 0; i < vecDeviceProperty.size(); i++) {
-            if (deviceLabel.getText().equals(((myDeviceProperty) vecDeviceProperty.get(i)).deviceName)) {
+            if (deviceLabel.getName().equals(((myDeviceProperty) vecDeviceProperty.get(i)).deviceName)) {
                 deviceEntity = (myDeviceProperty) vecDeviceProperty.get(i);
             }
         }
@@ -118,6 +119,7 @@ public class myUtils {
                                     myDeviceProperty deviceEntity = (myDeviceProperty) vecDeviceProperty.get(i);
                                     if(deviceEntity.deviceName.equals(framePropertyEntity.sOcupiedDeviceName)){
                                         deviceEntity.validNum = deviceEntity.validNum +1;
+                                        deviceEntity.labelEntity.setText(deviceEntity.labelEntity.getName() + " X " + deviceEntity.validNum);
                                     }
                                 }
 
