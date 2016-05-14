@@ -20,6 +20,7 @@ public class myFrameProperty {
     String iconPath;
     javax.swing.JLabel labelEntity;
     Boolean bValid;
+    javax.swing.JComponent UperComp;
 
     public myFrameProperty() {
     }
@@ -32,6 +33,7 @@ public class myFrameProperty {
         this.iconPath = iconPath;
         this.labelEntity = labelEntity;
         this.bValid = bValid;
+        this.UperComp = null;
     }
 
 }

@@ -4,9 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
+import javax.swing.JLayeredPane;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
+import javax.swing.JToggleButton;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,19 +21,26 @@ import javax.swing.JPopupMenu;
  */
 public class myUtils {
 
-    public boolean ValidateType(myFrameProperty framePropertyEntity, myDeviceProperty deviceEntity){
+    public JLayeredPane getDesignPane() {
+        return designPane;
+    }
+
+    public void setDesignPane(JLayeredPane designPane) {
+        this.designPane = designPane;
+    }
+
+    public boolean ValidateType(myFrameProperty framePropertyEntity, myDeviceProperty deviceEntity) {
         //framePropertyEntity.frameType != deviceEntity.frameType;
-        if(framePropertyEntity.frameType == deviceEntity.frameType){
+        if (framePropertyEntity.frameType == deviceEntity.frameType) {
             return true;
-        }
-        else if( framePropertyEntity.frameType == myTYPE.ANALOG_DIGITAL){
-            if(deviceEntity.frameType == myTYPE.ANALOG || deviceEntity.frameType == myTYPE.DIGITAL){
+        } else if (framePropertyEntity.frameType == myTYPE.ANALOG_DIGITAL) {
+            if (deviceEntity.frameType == myTYPE.ANALOG || deviceEntity.frameType == myTYPE.DIGITAL) {
                 return true;
             }
         }
         return false;
     }
-    
+
     public int DragDownOperation(Point src, Vector vecFrameProperty, javax.swing.JLabel deviceLabel, Vector vecDeviceProperty) {
 
         int returnIndex = -1;
@@ -75,6 +84,11 @@ public class myUtils {
                     framePropertyEntity.bOcupied = true;
                     framePropertyEntity.sOcupiedDeviceName = deviceLabel.getName();
                     framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(deviceEntity.iconFramePath)));
+
+                    String deviceName = deviceLabel.getName();
+                    if (deviceName.equals("BUZZER")) {
+                        AddOnOffButton(framePropertyEntity);
+                    }
 
                     deviceEntity.validNum = deviceEntity.validNum - 1;
                     deviceEntity.labelEntity.setText(deviceEntity.labelEntity.getName() + " X " + deviceEntity.validNum);
@@ -130,8 +144,8 @@ public class myUtils {
 
                                 for (int i = 0; i < vecDeviceProperty.size(); i++) {
                                     myDeviceProperty deviceEntity = (myDeviceProperty) vecDeviceProperty.get(i);
-                                    if(deviceEntity.deviceName.equals(framePropertyEntity.sOcupiedDeviceName)){
-                                        deviceEntity.validNum = deviceEntity.validNum +1;
+                                    if (deviceEntity.deviceName.equals(framePropertyEntity.sOcupiedDeviceName)) {
+                                        deviceEntity.validNum = deviceEntity.validNum + 1;
                                         deviceEntity.labelEntity.setText(deviceEntity.labelEntity.getName() + " X " + deviceEntity.validNum);
                                     }
                                 }
@@ -139,6 +153,11 @@ public class myUtils {
                                 framePropertyEntity.bOcupied = false;
                                 framePropertyEntity.sOcupiedDeviceName = "";
                                 framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconPathWhite)));
+                                                                
+                                getDesignPane().remove(framePropertyEntity.UperComp);
+                                getDesignPane().revalidate();
+                                getDesignPane().repaint();
+                                framePropertyEntity.UperComp = null;
                                 
                                 //FIXME need to update backgroud logic here
                             }
@@ -158,6 +177,28 @@ public class myUtils {
                 }
             }
         }
+    }
+
+    public void AddOnOffButton(myFrameProperty framePropertyEntity) {
+        JToggleButton newJToggleButton = new javax.swing.JToggleButton("OFF", false);
+        Point location = new Point(framePropertyEntity.labelEntity.getLocation());
+        System.out.println(framePropertyEntity.frameName);
+        System.out.println(location);
+        designPane.add(newJToggleButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(location.x + 10, (location.y - 28), -1, -1));
+        framePropertyEntity.UperComp = newJToggleButton;
+
+        newJToggleButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                int port = 555;
+                newJToggleButtonMouseClicked(evt, port);
+            }
+            private void newJToggleButtonMouseClicked(MouseEvent evt, int port) {
+                System.out.println(port);
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+        designPane.revalidate();
+        
     }
 
     private final int DELTA = 75;
@@ -185,5 +226,7 @@ public class myUtils {
     public final String iconPathRgbFrame = "/resource/white.imageset/white_RGB.png";
     public final String iconPathBarFrame = "/resource/white.imageset/white_BAR.png";
     public final String iconPathServoFrame = "/resource/white.imageset/white_servo.png";
-    
+
+    private javax.swing.JLayeredPane designPane;
+
 }

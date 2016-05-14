@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.util.Vector;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
+import javax.swing.JToggleButton;
 
 
 /*
@@ -28,6 +29,7 @@ public class mainFrame extends javax.swing.JFrame {
         initComponents();
 
         utils = new myUtils();
+        utils.setDesignPane(this.jLayeredPane1);
 
         //add all blank frame into vec
         this.vecFrameProperty = new Vector();
@@ -44,24 +46,24 @@ public class mainFrame extends javax.swing.JFrame {
 
         this.vecDeviceProperty = new Vector();
         this.vecDeviceProperty.addElement(new myDeviceProperty("LIGHT", utils.myTYPE.ANALOG, utils.iconPathLight, utils.iconPathLightFrame, this.jLabelLight, 2));
-        this.vecDeviceProperty.addElement(new myDeviceProperty("BUZZER", utils.myTYPE.ANALOG, utils.iconPathBuzzer, utils.iconPathBuzzerFrame, this.jLabelBuzzer, 1));
+        this.vecDeviceProperty.addElement(new myDeviceProperty("BUZZER", utils.myTYPE.DIGITAL, utils.iconPathBuzzer, utils.iconPathBuzzerFrame, this.jLabelBuzzer, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("NOISE", utils.myTYPE.ANALOG, utils.iconPathNoise, utils.iconPathNoiseFrame, this.jLabelNoise, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("RGB", utils.myTYPE.DIGITAL, utils.iconPathRgb, utils.iconPathRgbFrame, this.jLabelRGB, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("BAR", utils.myTYPE.DIGITAL, utils.iconPathBar, utils.iconPathBarFrame, this.jLabelBar, 1));
         this.vecDeviceProperty.addElement(new myDeviceProperty("SERVO", utils.myTYPE.PWM, utils.iconPathServo, utils.iconPathServoFrame, this.jLabelServo, 1));
-        
+
         this.jLabelLight.setName("LIGHT");
         this.jLabelBar.setName("BAR");
         this.jLabelBuzzer.setName("BUZZER");
         this.jLabelNoise.setName("NOISE");
         this.jLabelRGB.setName("RGB");
         this.jLabelServo.setName("SERVO");
-        
-        for (int i = 0; i < vecDeviceProperty.size(); i++){
+
+        for (int i = 0; i < vecDeviceProperty.size(); i++) {
             myDeviceProperty entity = (myDeviceProperty) vecDeviceProperty.get(i);
-            entity.labelEntity.setText(entity.labelEntity.getName() + " X " + entity.validNum );
+            entity.labelEntity.setText(entity.labelEntity.getName() + " X " + entity.validNum);
         }
-        
+
     }
 
     /**
@@ -280,7 +282,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, 20));
 
         jLabel3.setText("ANALOG");
-        jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 140, -1, 20));
+        jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 140, -1, 20));
 
         jLabel4.setText("ANALOG");
         jLayeredPane1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, -1, 20));
