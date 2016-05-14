@@ -19,6 +19,19 @@ import javax.swing.JPopupMenu;
  */
 public class myUtils {
 
+    public boolean ValidateType(myFrameProperty framePropertyEntity, myDeviceProperty deviceEntity){
+        //framePropertyEntity.frameType != deviceEntity.frameType;
+        if(framePropertyEntity.frameType == deviceEntity.frameType){
+            return true;
+        }
+        else if( framePropertyEntity.frameType == myTYPE.ANALOG_DIGITAL){
+            if(deviceEntity.frameType == myTYPE.ANALOG || deviceEntity.frameType == myTYPE.DIGITAL){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public int DragDownOperation(Point src, Vector vecFrameProperty, javax.swing.JLabel deviceLabel, Vector vecDeviceProperty) {
 
         int returnIndex = -1;
@@ -48,7 +61,7 @@ public class myUtils {
                             "此处已被其他器件占用！",
                             "错误",
                             JOptionPane.ERROR_MESSAGE);
-                } else if (framePropertyEntity.frameType != deviceEntity.frameType) {
+                } else if (!ValidateType(framePropertyEntity, deviceEntity)) {
                     JOptionPane.showMessageDialog(null,
                             "器件类型不匹配！",
                             "错误",
@@ -93,7 +106,7 @@ public class myUtils {
         }
         for (int i = 0; i < vecFrameProperty.size(); i++) {
             myFrameProperty framePropertyEntity = (myFrameProperty) vecFrameProperty.get(i);
-            if (framePropertyEntity.frameType != deviceEntity.frameType && framePropertyEntity.bOcupied == false && framePropertyEntity.bValid == true) {
+            if (!ValidateType(framePropertyEntity, deviceEntity) && framePropertyEntity.bOcupied == false && framePropertyEntity.bValid == true) {
                 framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconPathGrey)));
             }
         }
@@ -101,7 +114,7 @@ public class myUtils {
         return returnValue;
     }
 
-    public void framePopupMenu(javax.swing.JLabel frameLabel, Vector vecFrameProperty, final Vector vecDeviceProperty, java.awt.event.MouseEvent evt) {
+    public void FramePopupMenu(javax.swing.JLabel frameLabel, Vector vecFrameProperty, final Vector vecDeviceProperty, java.awt.event.MouseEvent evt) {
         if (evt.getButton() == MouseEvent.BUTTON3) {
             for (int i = 0; i < vecFrameProperty.size(); i++) {
                 final myFrameProperty framePropertyEntity = (myFrameProperty) vecFrameProperty.get(i);

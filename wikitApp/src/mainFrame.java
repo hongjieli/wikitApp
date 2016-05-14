@@ -423,7 +423,7 @@ public class mainFrame extends javax.swing.JFrame {
 
     private void frame1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame1MouseClicked
         // TODO add your handling code here:
-        utils.framePopupMenu(frame1, vecFrameProperty, vecDeviceProperty, evt);
+        utils.FramePopupMenu(frame1, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame1MouseClicked
 
     private void jLabelLightMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLightMousePressed
@@ -448,37 +448,37 @@ public class mainFrame extends javax.swing.JFrame {
 
     private void frame2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame2MouseClicked
         // TODO add your handling code here:
-        utils.framePopupMenu(frame2, vecFrameProperty, vecDeviceProperty, evt);
+        utils.FramePopupMenu(frame2, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame2MouseClicked
 
     private void frame3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame3MouseClicked
         // TODO add your handling code here:
-        utils.framePopupMenu(frame3, vecFrameProperty, vecDeviceProperty, evt);
+        utils.FramePopupMenu(frame3, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame3MouseClicked
 
     private void frame5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame5MouseClicked
         // TODO add your handling code here:
-        utils.framePopupMenu(frame5, vecFrameProperty, vecDeviceProperty, evt);
+        utils.FramePopupMenu(frame5, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame5MouseClicked
 
     private void frame6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame6MouseClicked
         // TODO add your handling code here:
-        utils.framePopupMenu(frame6, vecFrameProperty, vecDeviceProperty, evt);
+        utils.FramePopupMenu(frame6, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame6MouseClicked
 
     private void frame7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame7MouseClicked
         // TODO add your handling code here:
-        utils.framePopupMenu(frame7, vecFrameProperty, vecDeviceProperty, evt);
+        utils.FramePopupMenu(frame7, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame7MouseClicked
 
     private void frame8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame8MouseClicked
         // TODO add your handling code here:
-        utils.framePopupMenu(frame8, vecFrameProperty, vecDeviceProperty, evt);
+        utils.FramePopupMenu(frame8, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame8MouseClicked
 
     private void frame9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frame9MouseClicked
         // TODO add your handling code here:
-        utils.framePopupMenu(frame9, vecFrameProperty, vecDeviceProperty, evt);
+        utils.FramePopupMenu(frame9, vecFrameProperty, vecDeviceProperty, evt);
     }//GEN-LAST:event_frame9MouseClicked
 
     private void jLabelServoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelServoMouseDragged
