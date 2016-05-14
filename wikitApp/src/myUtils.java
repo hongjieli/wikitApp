@@ -153,12 +153,14 @@ public class myUtils {
                                 framePropertyEntity.bOcupied = false;
                                 framePropertyEntity.sOcupiedDeviceName = "";
                                 framePropertyEntity.labelEntity.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconPathWhite)));
-                                                                
-                                getDesignPane().remove(framePropertyEntity.UperComp);
-                                getDesignPane().revalidate();
-                                getDesignPane().repaint();
-                                framePropertyEntity.UperComp = null;
-                                
+
+                                if (framePropertyEntity.UperComp != null) {
+                                    getDesignPane().remove(framePropertyEntity.UperComp);
+                                    getDesignPane().revalidate();
+                                    getDesignPane().repaint();
+                                    framePropertyEntity.UperComp = null;
+                                }
+
                                 //FIXME need to update backgroud logic here
                             }
                         });
@@ -180,7 +182,7 @@ public class myUtils {
     }
 
     public void AddOnOffButton(myFrameProperty framePropertyEntity) {
-        JToggleButton newJToggleButton = new javax.swing.JToggleButton("OFF", false);
+        final JToggleButton newJToggleButton = new javax.swing.JToggleButton("OFF", false);
         Point location = new Point(framePropertyEntity.labelEntity.getLocation());
         System.out.println(framePropertyEntity.frameName);
         System.out.println(location);
@@ -189,16 +191,21 @@ public class myUtils {
 
         newJToggleButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                int port = 555;
-                newJToggleButtonMouseClicked(evt, port);
+                newJToggleButtonMouseClicked(evt);
             }
-            private void newJToggleButtonMouseClicked(MouseEvent evt, int port) {
-                System.out.println(port);
+
+            private void newJToggleButtonMouseClicked(MouseEvent evt) {
+                if(newJToggleButton.isSelected()){
+                    newJToggleButton.setText("ON");
+                }
+                else{
+                    newJToggleButton.setText("OFF");
+                }
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         designPane.revalidate();
-        
+
     }
 
     private final int DELTA = 75;
