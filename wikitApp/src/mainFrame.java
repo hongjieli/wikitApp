@@ -151,7 +151,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLayeredPane1.add(jLabelNoise, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 174, 190, -1));
 
         jLabelMainBoard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/MB.imageset/MB_small.png"))); // NOI18N
-        jLayeredPane1.add(jLabelMainBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 146, -1, -1));
+        jLayeredPane1.add(jLabelMainBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, -1, -1));
 
         frame1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame1.setToolTipText("");
@@ -160,7 +160,7 @@ public class mainFrame extends javax.swing.JFrame {
                 frame1MouseClicked(evt);
             }
         });
-        jLayeredPane1.add(frame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 17, -1, -1));
+        jLayeredPane1.add(frame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, -1, -1));
 
         frame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame2.setToolTipText("");
@@ -169,10 +169,10 @@ public class mainFrame extends javax.swing.JFrame {
                 frame2MouseClicked(evt);
             }
         });
-        jLayeredPane1.add(frame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 17, -1, -1));
+        jLayeredPane1.add(frame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, -1, -1));
 
         frame4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
-        jLayeredPane1.add(frame4, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 17, -1, -1));
+        jLayeredPane1.add(frame4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 60, -1, -1));
 
         frame3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -180,7 +180,7 @@ public class mainFrame extends javax.swing.JFrame {
                 frame3MouseClicked(evt);
             }
         });
-        jLayeredPane1.add(frame3, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 17, -1, -1));
+        jLayeredPane1.add(frame3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 60, -1, -1));
 
         frame7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -188,7 +188,7 @@ public class mainFrame extends javax.swing.JFrame {
                 frame7MouseClicked(evt);
             }
         });
-        jLayeredPane1.add(frame7, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 368, -1, -1));
+        jLayeredPane1.add(frame7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, -1, -1));
 
         frame8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -196,7 +196,7 @@ public class mainFrame extends javax.swing.JFrame {
                 frame8MouseClicked(evt);
             }
         });
-        jLayeredPane1.add(frame8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 368, -1, -1));
+        jLayeredPane1.add(frame8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, -1, -1));
 
         frame9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame9.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -204,10 +204,10 @@ public class mainFrame extends javax.swing.JFrame {
                 frame9MouseClicked(evt);
             }
         });
-        jLayeredPane1.add(frame9, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 368, -1, -1));
+        jLayeredPane1.add(frame9, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 400, -1, -1));
 
         frame10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/gray.imageset/grey.png"))); // NOI18N
-        jLayeredPane1.add(frame10, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 368, -1, -1));
+        jLayeredPane1.add(frame10, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 400, -1, -1));
 
         frame5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -215,7 +215,7 @@ public class mainFrame extends javax.swing.JFrame {
                 frame5MouseClicked(evt);
             }
         });
-        jLayeredPane1.add(frame5, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 132, -1, -1));
+        jLayeredPane1.add(frame5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
 
         frame6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/white.imageset/white.png"))); // NOI18N
         frame6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -223,7 +223,7 @@ public class mainFrame extends javax.swing.JFrame {
                 frame6MouseClicked(evt);
             }
         });
-        jLayeredPane1.add(frame6, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 266, -1, -1));
+        jLayeredPane1.add(frame6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, -1, -1));
 
         jLabelLight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/LS.imageset/LS_small.jpg"))); // NOI18N
         jLabelLight.setText("LIGHT");
@@ -277,19 +277,19 @@ public class mainFrame extends javax.swing.JFrame {
         jLayeredPane1.add(jLabelRGB, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 242, 190, -1));
 
         jLabel2.setText("ANALOG");
-        jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, 20));
+        jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, 20));
 
         jLabel3.setText("ANALOG");
-        jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, -1, 20));
+        jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 140, -1, 20));
 
         jLabel4.setText("ANALOG");
-        jLayeredPane1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, -1, 20));
+        jLayeredPane1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, -1, 20));
 
         jLabel5.setText("DIGITAL");
-        jLayeredPane1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, -1, 20));
+        jLayeredPane1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, 20));
 
         jLabel1.setText("ANALOG/DIGITAL");
-        jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, -1, 20));
+        jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, -1, 20));
 
         jLabelServo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/servo.imageset/micro servo_small.png"))); // NOI18N
         jLabelServo.setText("SERVO");
@@ -308,16 +308,16 @@ public class mainFrame extends javax.swing.JFrame {
         });
         jLayeredPane1.add(jLabelServo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 190, -1));
 
-        jPanel1.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         jLabel6.setText("DIGITAL");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 440, -1, 20));
+        jLayeredPane1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, -1, 20));
 
         jLabel7.setText("DIGITAL");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, 20));
+        jLayeredPane1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, -1, 20));
 
         jLabel8.setText("PWM");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, -1, 20));
+        jLayeredPane1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 480, -1, 20));
+
+        jPanel1.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 710));
 
         jTabbedPane1.addTab("Design", jPanel1);
 
@@ -336,11 +336,11 @@ public class mainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
