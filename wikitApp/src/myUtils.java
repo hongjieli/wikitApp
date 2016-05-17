@@ -8,6 +8,7 @@ import javax.swing.JLayeredPane;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
+import javax.swing.JProgressBar;
 import javax.swing.JToggleButton;
 
 /*
@@ -88,6 +89,8 @@ public class myUtils {
                     String deviceName = deviceLabel.getName();
                     if (deviceName.equals("BUZZER")) {
                         AddOnOffButton(framePropertyEntity);
+                    } else if (deviceName.equals("NOISE")) {
+                        AddProcessBar(framePropertyEntity);
                     }
 
                     deviceEntity.validNum = deviceEntity.validNum - 1;
@@ -158,6 +161,10 @@ public class myUtils {
                                     getDesignPane().remove(framePropertyEntity.UperComp);
                                     getDesignPane().revalidate();
                                     getDesignPane().repaint();
+                                    if(framePropertyEntity.UperComp.getName().equals("myProcessBarWithTimer")){
+                                        myProcessBarWithTimer compEntity = (myProcessBarWithTimer) framePropertyEntity.UperComp;
+                                        compEntity.stopTask();
+                                    }
                                     framePropertyEntity.UperComp = null;
                                 }
 
@@ -181,8 +188,22 @@ public class myUtils {
         }
     }
 
+    public void AddProcessBar(myFrameProperty framePropertyEntity) {
+        myProcessBarWithTimer newProcessBar = new myProcessBarWithTimer(0, 0, 100);
+        newProcessBar.setStringPainted(false);
+        
+        Point location = new Point(framePropertyEntity.labelEntity.getLocation());
+        System.out.println(framePropertyEntity.frameName);
+        System.out.println(location);
+        designPane.add(newProcessBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(location.x + 10, (location.y - 28), 60, 20));
+        framePropertyEntity.UperComp = newProcessBar;
+        //newProcessBar.setSize(20, 20);
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void AddOnOffButton(myFrameProperty framePropertyEntity) {
         final JToggleButton newJToggleButton = new javax.swing.JToggleButton("OFF", false);
+        newJToggleButton.setName("JToggleButton");
         Point location = new Point(framePropertyEntity.labelEntity.getLocation());
         System.out.println(framePropertyEntity.frameName);
         System.out.println(location);
@@ -195,10 +216,9 @@ public class myUtils {
             }
 
             private void newJToggleButtonMouseClicked(MouseEvent evt) {
-                if(newJToggleButton.isSelected()){
+                if (newJToggleButton.isSelected()) {
                     newJToggleButton.setText("ON");
-                }
-                else{
+                } else {
                     newJToggleButton.setText("OFF");
                 }
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -30,7 +30,7 @@ public class mytestserial {
     public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
         //System.out.print(System.getProperty("java.library.path"));
-        portList = CommPortIdentifier.getPortIdentifiers();
+        portList = CommPortIdentifier.getPortIdentifiers();        
 
         while (portList.hasMoreElements()) {
             portId = (CommPortIdentifier) portList.nextElement();
